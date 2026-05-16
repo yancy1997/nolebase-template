@@ -12,7 +12,7 @@ import TagsAlias from '../.vitepress/docsTagsAlias.json'
 import type { ArticleTree, DocsMetadata, DocsTagsAlias, Tag } from './types/metadata'
 
 const dir = './'
-const target = '笔记/'
+const targets = ['笔记/']
 const folderTop = true
 
 export const DIR_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -54,9 +54,10 @@ export async function listPages(dir: string, options: { target?: string, ignore?
  * @param indexes 路由树
  * @param path 路径
  * @param upgradeIndex 是否升级 index
+ * @param target 目标目录（如 '笔记/'）
  * @returns 路由树
  */
-async function addRouteItem(indexes: ArticleTree[], path: string, upgradeIndex = false) {
+async function addRouteItem(indexes: ArticleTree[], path: string, upgradeIndex = false, target: string = '') {
   const suffixIndex = path.lastIndexOf('.')
   const nameStartsAt = path.lastIndexOf('/') + 1
   const title = path.slice(nameStartsAt, suffixIndex)
@@ -69,8 +70,8 @@ async function addRouteItem(indexes: ArticleTree[], path: string, upgradeIndex =
   const linkItems = item.link.split('/')
   linkItems.shift()
 
-  target.split('/').forEach((item) => {
-    if (item)
+  target.split('/').forEach((t) => {
+    if (t)
       linkItems.shift()
   })
 
@@ -129,11 +130,14 @@ function addRouteItemRecursion(indexes: ArticleTree[], item: any, path: string[]
  * 处理 docsMetadata.sidebar，拼接 sidebar 路由树
  * @param docs 符合 glob 的文件列表
  * @param docsMetadata docsMetadata.json 的内容
+ * @param targets 目标目录数组
  */
-async function processSidebar(docs: string[], docsMetadata: DocsMetadata) {
-  await Promise.all(docs.map(async (docPath: string) => {
-    await addRouteItem(docsMetadata.sidebar, docPath)
-  }))
+async function processSidebar(docs: string[], docsMetadata: DocsMetadata, targets: string[]) {
+  for (const docPath of docs) {
+    // 找到该文档属于哪个 target
+    const target = targets.find(t => docPath.startsWith(t.replace('/', '')) || docPath.startsWith(t)) || ''
+    await addRouteItem(docsMetadata.sidebar, docPath, false, target)
+  }
 }
 
 /**
@@ -343,17 +347,21 @@ async function processDocs(docs: string[], docsMetadata: DocsMetadata) {
 
 async function run() {
   let now = (new Date()).getTime()
-  const docs = await listPages(dir, { target })
+  let allDocs: string[] = []
+  for (const target of targets) {
+    const docs = await listPages(dir, { target })
+    allDocs = allDocs.concat(docs)
+  }
   console.log('listed pages in', `${(new Date()).getTime() - now}ms`)
   now = (new Date()).getTime()
 
   const docsMetadata: DocsMetadata = { docs: [], sidebar: [], tags: [] }
 
-  await processDocs(docs, docsMetadata)
+  await processDocs(allDocs, docsMetadata)
   console.log('processed docs in', `${(new Date()).getTime() - now}ms`)
   now = (new Date()).getTime()
 
-  await processSidebar(docs, docsMetadata)
+  await processSidebar(allDocs, docsMetadata, targets)
   console.log('processed sidebar in', `${(new Date()).getTime() - now}ms`)
   now = (new Date()).getTime()
 

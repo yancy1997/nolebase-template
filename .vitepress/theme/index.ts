@@ -151,12 +151,12 @@ const ExtendedTheme: Theme = {
     
     // Obtain configuration from: https://giscus.app/
     giscusTalk({
-      repo: 'Jackiexiao/nolebase-template',
-      repoId: 'R_kgDOL5WHsg',
-      category: 'Announcements', // default: `General`
-      categoryId: 'DIC_kwDOL5WHss4CfTYs',
-      mapping: 'url', // default: `pathname`
-      inputPosition: 'top', // default: `top`
+      repo: 'yancy1997/nolebase-template',
+      repoId: 'R_kgDOPXvhvQ',
+      category: 'Q&A', // default: `General`
+      categoryId: 'DIC_kwDOPXvhvc4C9LUr',
+      mapping: 'pathname', // default: `pathname`
+      inputPosition: 'bottom', // default: `top`
       lang: 'zh-CN', // default: `zh-CN`
       // i18n setting (Note: This configuration will override the default language set by lang)
       // Configured as an object with key-value pairs inside:
@@ -165,9 +165,12 @@ const ExtendedTheme: Theme = {
           'zh-Hans': 'zh-CN',
           'en-US': 'en'
       },
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      strict: '0',
       homePageShowComment: false, // Whether to display the comment area on the homepage, the default is false
-      lightTheme: 'light', // default: `light`
-      darkTheme: 'transparent_dark', // default: `transparent_dark`
+      lightTheme: 'preferred_color_scheme', // default: `light`
+      darkTheme: 'preferred_color_scheme', // default: `transparent_dark`
       // ...
     }, {
       frontmatter, route
