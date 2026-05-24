@@ -30,14 +30,15 @@
   --vp-c-sky-1: #3c96ca;
   --vp-c-sky-2: #49a1d4;
   --vp-c-sky-3: #49a1d4;
-  --vp-c-sky-soft: rgba(73, 161, 212, 0.84);
+  --vp-c-sky-soft: rgba(73, 161, 212, 0.14);
 }
 
 .dark {
-  --vp-c-sky-1: #49a3d7;
-  --vp-c-sky-2: #58b1e5;
-  --vp-c-sky-3: #58b1e5;
-  --vp-c-sky-soft: #58b1e5;
+  /* 降饱和提柔和，暗色下避免刺眼 */
+  --vp-c-sky-1: #8aa9d4;
+  --vp-c-sky-2: #9bb7df;
+  --vp-c-sky-3: #6f8db5;
+  --vp-c-sky-soft: rgba(155, 183, 223, 0.16);
 }
 
 /**

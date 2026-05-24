@@ -193,11 +193,23 @@ html, body {
 
 .vp-doc a {
   text-decoration: none;
-  transition: all 0.3s ease;
+  background-image: linear-gradient(var(--vp-c-brand-1), var(--vp-c-brand-1));
+  background-size: 0% 1px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 220ms ease-out, color 200ms ease-out;
 }
 
 .vp-doc a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background-size: 100% 1px;
+  color: var(--vp-c-brand-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vp-doc a {
+    transition: none;
+  }
 }
 
 /**
@@ -274,4 +286,121 @@ html, body {
 .dark .VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"]:active {
   color: white;
   background-color: #4b4b4b;
+}
+
+/* ============================================================
+ * UI revamp · 阅读体验微交互
+ * ========================================================== */
+
+/* 代码块更柔和的圆角与边框 */
+.vp-doc div[class*='language-'] {
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc div[class*='language-'] pre {
+  padding: 18px 0;
+}
+
+/* 大纲（aside outline）当前项左侧加色条，强化定位感 */
+.VPDocAsideOutline .outline-link.active {
+  position: relative;
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  transition: color 200ms ease-out;
+}
+
+.VPDocAsideOutline .outline-link.active::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  width: 2px;
+  height: 14px;
+  background: var(--vp-c-brand-1);
+  border-radius: 2px;
+  transform: translateY(-50%);
+  transition: height 200ms ease-out;
+}
+
+/* 路由切换淡入（主内容） */
+.VPContent {
+  animation: vp-fade-in 220ms ease-out;
+}
+
+@keyframes vp-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPContent {
+    animation: none;
+  }
+}
+
+/* 回到顶部按钮（由 BackToTop.vue 渲染，这里只定义样式以便复用 token） */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity 200ms ease-out,
+    transform 200ms ease-out,
+    background-color 200ms ease-out,
+    color 200ms ease-out,
+    visibility 0s linear 200ms;
+  z-index: 30;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.back-to-top:hover {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-color: transparent;
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: opacity 100ms linear, visibility 0s linear 100ms;
+    transform: none;
+  }
 }

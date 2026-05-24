@@ -36,8 +36,10 @@ import {
 import { creators } from '../creators'
 
 import AppContainer from './components/AppContainer.vue'
+import BackToTop from './components/BackToTop.vue'
 import DocFooter from './components/DocFooter.vue'
 import HomePage from './components/HomePage.vue'
+import NotesGrid from './components/NotesGrid.vue'
 import Share from './components/Share.vue'
 import TocList from './components/TocList.vue'
 
@@ -74,6 +76,9 @@ const ExtendedTheme: Theme = {
       'nav-screen-content-after': () => [
         h(NolebaseEnhancedReadabilitiesScreenMenu),
       ],
+      'layout-bottom': () => [
+        h(BackToTop),
+      ],
     })
   },
   enhanceApp({ app }) {
@@ -89,6 +94,7 @@ const ExtendedTheme: Theme = {
     app.component('Share', Share)
     app.component('TocList', TocList)
     app.component('AppContainer', AppContainer)
+    app.component('NotesGrid', NotesGrid)
     app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
 
     app.provide(NolebaseEnhancedReadabilitiesInjectionKey, {
