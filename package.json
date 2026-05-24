@@ -21,7 +21,7 @@
     "dev": "pnpm run docs:dev",
     "build": "pnpm run docs:build",
     "serve": "pnpm run docs:serve",
-    "docs:dev": "pnpm run update && vitepress dev",
+    "docs:dev": "pnpm run update && vitepress dev --host",
     "docs:build": "pnpm run update && vitepress build",
     "docs:serve": "vitepress serve",
     "update": "tsx scripts/update.ts",
