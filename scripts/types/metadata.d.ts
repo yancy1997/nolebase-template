@@ -1,6 +1,9 @@
 export interface ArticleTree {
   index: string
   text: string
+  description?: string
+  tags?: string[]
+  publishedAt?: string
   link?: string
   lastUpdated?: number
   collapsible?: true

@@ -61,9 +61,13 @@ async function addRouteItem(indexes: ArticleTree[], path: string, upgradeIndex =
   const suffixIndex = path.lastIndexOf('.')
   const nameStartsAt = path.lastIndexOf('/') + 1
   const title = path.slice(nameStartsAt, suffixIndex)
+  const page = matter(fs.readFileSync(path, 'utf-8'))
   const item = {
     index: title,
-    text: title,
+    text: page.data.title || title,
+    description: page.data.description || '',
+    tags: Array.isArray(page.data.tags) ? page.data.tags : [],
+    publishedAt: page.data.date || page.data.created || '',
     link: `/${path.slice(0, suffixIndex)}`,
     lastUpdated: +await git.raw(['log', '-1', '--format=%at', path]) * 1000,
   }

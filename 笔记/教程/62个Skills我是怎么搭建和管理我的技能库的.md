@@ -1,5 +1,6 @@
 ---
 title: 62 个 Skills，我是怎么搭建和管理我的技能库的？
+description: "以 iCloud 同步、Git 版本控制和软链接分发的三层架构搭建 62 个 Skills 技能库，按八层能力分类管理，附新增、更新、删除的日常维护 SOP。"
 tags: [content, skill, ai-tools]
 date: 2026-04-06
 ---

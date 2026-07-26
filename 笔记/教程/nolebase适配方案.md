@@ -1,3 +1,10 @@
+---
+title: nolebase 适配方案
+description: "VitePress + Nolebase 博客模板的个性化适配指南，涵盖 metadata、creators、首页内容的修改要点和目录结构详解，含修复优先级和验证步骤。"
+date: 2026-05-16
+tags: [blog, vitepress, nolebase, 教程]
+---
+
 # 项目修复计划
 
 ## 概述
@@ -234,7 +241,7 @@ export const creators: Creator[] = [
 
 在开始修复前，请确认以下信息：
 
-1. **站点名称**: aichen
+1. **站点名称**: 陈瑜瑾
 2. **站点描述**: 小陈的折腾笔记
 3. **GitHub 仓库**: https://github.com/yancy1997/nolebase-template
 4. **域名**: blog.050388.xyz

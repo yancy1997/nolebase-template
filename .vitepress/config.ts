@@ -10,7 +10,6 @@ import { UnlazyImages } from '@nolebase/markdown-it-unlazy-img'
 
 import { githubRepoLink, siteDescription, siteName, targetDomain } from '../metadata'
 import { creatorNames, creatorUsernames } from './creators'
-import { sidebar } from './docsMetadata.json'
 
 export default defineConfig({
   vue: {
@@ -28,7 +27,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: siteName,
   description: siteDescription,
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
   head: [
     ['meta', {
       name: 'theme-color',
@@ -65,7 +64,7 @@ export default defineConfig({
       {
         name: 'keywords',
         content:
-          ['markdown', 'knowledge-base', '知识库', 'vitepress', 'obsidian', 'notebook', 'notes', ...creatorUsernames].join(', '),
+          ['AI Agent', '数据产品', 'Skills', 'MCP', 'Obsidian', '知识管理', ...creatorUsernames].join(', '),
       },
     ],
 
@@ -133,9 +132,9 @@ export default defineConfig({
       { icon: 'github', link: githubRepoLink },
     ],
     footer: {
-      message: '用 <span style="color: #e25555;">&#9829;</span> 撰写',
+      message: '记录数据产品、Agent 与 AI 工作流的真实实践',
       copyright:
-        '<a class="footer-cc-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> © 2022-PRESENT Nólëbase 的创作者们',
+        '<a class="footer-cc-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> © 2026 陈瑜瑾',
     },
     search: {
       provider: 'local',
@@ -204,10 +203,11 @@ export default defineConfig({
       },
     },
     nav: [
-      { text: '笔记', link: '/笔记/' },
-      { text: '最近更新', link: '/toc' },
+      { text: '主页', link: '/' },
+      { text: '经历', link: '/#experience' },
+      { text: '项目', link: '/#projects' },
+      { text: '写作', link: '/articles' },
     ],
-    sidebar,
   },
   markdown: {
     theme: {
@@ -236,5 +236,22 @@ export default defineConfig({
         byLevel: 2,
       },
     })(siteConfig)
+  },
+
+  // 文章页用 frontmatter.description 覆盖默认 og:description，无 description 时回退到站点描述
+  transformPageData(pageData) {
+    const description = (pageData.frontmatter.description as string) || siteDescription
+    pageData.frontmatter.description = description
+    if (!pageData.frontmatter.head)
+      pageData.frontmatter.head = []
+    pageData.frontmatter.head.push(
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { name: 'twitter:description', content: description }],
+    )
+  },
+
+  // VitePress 1.x 内置 sitemap，构建时生成 /sitemap.xml
+  sitemap: {
+    hostname: targetDomain,
   },
 })

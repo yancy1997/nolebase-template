@@ -11,11 +11,17 @@ importers:
       '@antfu/eslint-config':
         specifier: ^2.12.2
         version: 2.27.3(@vue/compiler-sfc@3.5.34)(eslint@8.57.1)(typescript@5.9.3)
+      '@iconify-json/carbon':
+        specifier: ^1.2.24
+        version: 1.2.24
       '@iconify-json/eos-icons':
         specifier: ^1.1.10
         version: 1.2.4
       '@iconify-json/ic':
         specifier: ^1.1.17
+        version: 1.2.4
+      '@iconify-json/icon-park-outline':
+        specifier: ^1.2.4
         version: 1.2.4
       '@iconify-json/octicon':
         specifier: ^1.1.53
@@ -1363,8 +1369,8 @@ packages:
     deprecated: Use @eslint/object-schema instead
     dev: true
 
-  /@iconify-json/carbon@1.2.21:
-    resolution: {integrity: sha512-yCutC5KWR7uiXdCum1MqNrnfUhq118WYhHkUiBux6wekc6UnlVKvIte54AER0B2uEe0wfKxFIMoJqJugjViATQ==}
+  /@iconify-json/carbon@1.2.24:
+    resolution: {integrity: sha512-b7u/eTWE3xFa7UXlRJBSEm6At1y6+F0P3imBEip5/8QeRzouxVjBf80Y2xnu1GYsFo9MYlHA0bZfxxMd5givfw==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -1706,7 +1712,7 @@ packages:
     peerDependencies:
       vitepress: ^1.0.0
     dependencies:
-      '@iconify-json/carbon': 1.2.21
+      '@iconify-json/carbon': 1.2.24
       '@iconify-json/icon-park-outline': 1.2.4
       '@nolebase/ui': 2.18.2(vitepress@1.6.4)(vue@3.5.34)
       less: 4.6.4

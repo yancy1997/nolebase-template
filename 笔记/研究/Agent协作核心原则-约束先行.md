@@ -1,13 +1,10 @@
-
 ---
 title: Agent协作核心原则-约束先行
+description: "用好 Agent 的核心是\"约束先行\"四字原则，通过全局 CLAUDE.md、项目级规范、文档和记忆文件构建四层穿透体系，让 Agent 行为可预期、产出质量一致。"
 created: 2026-04-22
 updated: 2026-04-26
 type: concept
 tags: [AI, Agent协作, 工作方法, 约束先行, Claude Code]
-sources: "[[99_系统/归档/收件箱/2026/04/2026-04-14_Agent协作核心原则-约束先行.md]]"
-area: "[[AI产品经理技能]]"
-related: [[Data_Agent]], [[html-ppt-skill]]
 ---
 # Agent协作核心原则-约束先行
 用好Agent的核心技巧并非复杂的Prompt技巧或丰富的Skills库，而是四字原则：**约束先行**——在让Agent执行任何任务之前，先制定好从上到下穿透的规范体系，全局规矩、项目规矩、目录规矩逐层生效，无规范的工作空间不动手。

@@ -1,5 +1,6 @@
 ---
 title: 构建高效AI Agent
+description: "Anthropic 总结的 Agent 构建方法论，主张从简单开始、透明性优先、精心设计工具接口，涵盖提示链、路由、并行化、编排器-工作者五种工作流模式和动态 Agent 路径。"
 created: 2026-05-01
 updated: 2026-05-01
 type: concept
@@ -9,9 +10,6 @@ tags:
   - 工作流
   - Anthropic
   - 最佳实践
-sources:
-  - - 00_收件箱/Building_Effective_Agents_Anthropic_中文.md
-area: "[[AI产品经理技能]]"
 ---
 # 构建高效AI Agent
 Anthropic 基于与数十个团队的合作经验总结的 Agent 构建方法论。核心主张：最成功的实现不依赖复杂框架，而是用简单、可组合的模式构建。
@@ -51,6 +49,6 @@ Anthropic 基于与数十个团队的合作经验总结的 Agent 构建方法论
 
 ## 相关概念
 - [[Agent协作核心原则-约束先行]] — 约束体系是 Agent 可靠运行的前提
-- [[Data_Agent]] — Agent 在数据领域的具体实践
-- [[Skills与Agent产品对比]] — Skills vs Agent 的产品策略选择
-- [[OpenAI内部数据智能体实践]] — OpenAI 的 Agent 落地案例
+- Data Agent — Agent 在数据领域的具体实践
+- Skills 与 Agent 产品对比 — Skills vs Agent 的产品策略选择
+- OpenAI 内部数据智能体实践 — OpenAI 的 Agent 落地案例

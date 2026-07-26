@@ -1,5 +1,6 @@
 ---
 title: Obsidian知识库自动化优化方案
+description: "用 Ark.cn 的 kimi-k2.6 替代规则引擎自动提炼收件箱原子笔记，打通收件箱编译、LLM Wiki 索引和微信日报三个环节，构建知识库的自动归档与反馈闭环。"
 created: 2026-04-26
 updated: 2026-04-26
 type: tutorial
@@ -11,8 +12,8 @@ tags:
   - cronjob
   - llm-wiki
   - ingest
-sources: "[[99_系统/归档/收件箱/2026/04/20260424_Obsidian知识库自动化优化方案.md]]"
-area: "[[知识管理]]"
+sources: "Obsidian 知识库自动化优化方案原始记录"
+area: "知识管理"
 ---
 # Obsidian知识库自动化优化方案
 
@@ -94,7 +95,7 @@ area: "[[知识管理]]"
 
 ## 关联笔记
 - 99_系统/LLM_WIKI_INDEX.md（已清理）
-- [[40_知识库/concepts/Agent协作核心原则-约束先行]]
+- [Agent 协作核心原则：约束先行](../研究/Agent协作核心原则-约束先行.md)
 - orbitos_knowledge_refinery.py（脚本位于 `~/.hermes/scripts/`）
 - orbitos_daily_report.py（脚本位于 `~/.hermes/scripts/`）
 

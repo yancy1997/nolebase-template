@@ -1,7 +1,7 @@
 /** 文本 */
-export const siteName = 'aichen'
-export const siteShortName = 'aichen'
-export const siteDescription = '小陈的折腾笔记'
+export const siteName = '陈瑜瑾'
+export const siteShortName = '陈瑜瑾'
+export const siteDescription = '数据产品经理 × AI 实践者'
 
 /** 文档所在目录 */
 export const include = ['笔记']

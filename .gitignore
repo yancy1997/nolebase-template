@@ -41,6 +41,8 @@ node_modules
 # Generated files
 
 components.d.ts
+test-results/
+playwright-report/
 
 # Local env files
 
