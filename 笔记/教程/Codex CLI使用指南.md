@@ -1,11 +1,10 @@
 ---
 title: Codex CLI使用指南
+description: "OpenAI 的终端编码 Agent，可在 git 仓库中直接执行读代码、改代码、跑命令任务，适合中小规模功能开发、重构和批量修复，需配合干净工作区和 AGENTS.md 使用。"
 created: 2026-05-01
 updated: 2026-05-01
 type: tutorial
 tags: [AI, Codex, 开发工具, Agent, OpenAI]
-sources: [[00_收件箱/Codex CLI 使用指南.md]]
-area: "[[工具教程]]"
 ---
 # Codex CLI使用指南
 OpenAI 的终端编码 Agent，可在 git 仓库中直接执行编码任务：读代码、改代码、跑命令，适合中小规模功能开发、重构、批量修复。
@@ -28,5 +27,5 @@ OpenAI 的终端编码 Agent，可在 git 仓库中直接执行编码任务：�
 - 支持 `--approval-policy` 控制自动化程度
 
 ## 相关概念
-- [[Symphony编排框架]] — Codex 的上层编排框架
+- Symphony 编排框架 — Codex 的上层编排框架
 - [[构建高效AI Agent]] — 编码 Agent 是 Agent 最佳落地场景之一

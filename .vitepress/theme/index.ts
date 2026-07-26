@@ -40,6 +40,11 @@ import DocFooter from './components/DocFooter.vue'
 import HomePage from './components/HomePage.vue'
 import Share from './components/Share.vue'
 import TocList from './components/TocList.vue'
+import HybridHome from './components/HybridHome.vue'
+import PersonalHome from './components/PersonalHome.vue'
+import ArticleLibrary from './components/ArticleLibrary.vue'
+import TopicDirectory from './components/TopicDirectory.vue'
+import AboutProfile from './components/AboutProfile.vue'
 
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
@@ -53,6 +58,7 @@ import 'virtual:uno.css'
 
 import '../styles/main.css'
 import '../styles/vars.css'
+import '../styles/design-system.css'
 
 import('@nolebase/vitepress-plugin-inline-link-preview/client')
 
@@ -89,6 +95,11 @@ const ExtendedTheme: Theme = {
     app.component('Share', Share)
     app.component('TocList', TocList)
     app.component('AppContainer', AppContainer)
+    app.component('HybridHome', HybridHome)
+    app.component('PersonalHome', PersonalHome)
+    app.component('ArticleLibrary', ArticleLibrary)
+    app.component('TopicDirectory', TopicDirectory)
+    app.component('AboutProfile', AboutProfile)
     app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
 
     app.provide(NolebaseEnhancedReadabilitiesInjectionKey, {
@@ -122,23 +133,6 @@ const ExtendedTheme: Theme = {
             key: 'progress',
             type: 'progress',
             title: '完成进度',
-          },
-          {
-            key: 'wordCount',
-            type: 'dynamic',
-            title: '字数',
-            options: {
-              type: 'wordsCount',
-            },
-          },
-          {
-            key: 'readingTime',
-            type: 'dynamic',
-            title: '阅读时间',
-            options: {
-              type: 'readingTime',
-              dateFnsLocaleName: 'zhCN',
-            },
           },
         ],
       },

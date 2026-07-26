@@ -1,5 +1,6 @@
 ---
 title: Computer Use
+description: "Anthropic 推出的通用 GUI 操作能力，Claude 通过截图理解屏幕并模拟鼠标键盘，能执行数十步的多步任务，是 Agent 工具箱中无专用 API 时的万能后备方案。"
 created: 2026-05-01
 updated: 2026-05-01
 type: concept
@@ -10,9 +11,6 @@ tags:
   - GUI自动化
   - Agent
   - Anthropic
-sources:
-  - - 00_收件箱/Introducing_Computer_Use_Anthropic_中文.md
-area: "[[AI产品经理技能]]"
 ---
 # Computer Use
 Anthropic 首次公开测试的通用 GUI 操作能力：通过 API 指导 Claude 像人一样使用计算机——查看屏幕、移动光标、点击按钮、输入文本。标志着 AI Agent 进入"操作电脑"的新时代。
@@ -38,4 +36,4 @@ Computer Use 是 Agent 工具箱中的"万能后备"：当没有专用 API 或 M
 
 ## 相关概念
 - [[构建高效AI Agent]] — Computer Use 是 Agent 工具能力的一种
-- [[扩展思考与测试时计算]] — 扩展思考提升了 Computer Use 的多步任务能力
+- 扩展思考与测试时计算 — 扩展思考提升了 Computer Use 的多步任务能力

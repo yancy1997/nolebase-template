@@ -1,5 +1,6 @@
 ---
 title: "AI Agent 折腾本地化"
+description: "用 AI Agent 对话驱动替代搜索-复制-调试流程，实现飞牛 NAS 开关机、HomeAssistant、Docker 等本地设备的语音触发控制，把折腾成本降到最低。"
 date: 2026-05-16
 tags: [ai-agent, 自动化, 折腾, 经验]
 comment: true

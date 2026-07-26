@@ -1,5 +1,6 @@
 ---
 title: AI 工具越用越多，Skills 乱套了怎么办？
+description: "诊断 Skills 越多越乱背后的数量管理、专用通用混用、多工具重复维护三大矛盾，提出用 Git 仓库作为单一真相来源、软链接分发到各工作区的解决方案。"
 tags: [content, skill, ai-tools]
 date: 2026-04-06
 ---

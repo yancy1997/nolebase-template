@@ -1,5 +1,6 @@
 ---
 title: MCP与Agent生产集成
+description: "对比 API、CLI、MCP 三种 Agent 集成方式，阐述生产 Agent 倾向于 MCP 的原因，并给出远程服务器构建、按意图组织工具、代码编排、丰富语义四项设计原则。"
 created: 2026-05-01
 updated: 2026-05-01
 type: concept
@@ -10,9 +11,6 @@ tags:
   - 集成模式
   - Anthropic
   - 生产系统
-sources:
-  - - 00_收件箱/构建通过 MCP 抵达生产系统的 Agent.md
-area: "[[AI产品经理技能]]"
 ---
 # MCP与Agent生产集成
 Agent 的价值取决于它能触达的系统。三种连接方式（API/CLI/MCP）中，生产 Agent 最终倾向于 MCP，因为它提供了标准化的认证、发现和丰富语义的通用层。
@@ -43,5 +41,5 @@ Agent 的价值取决于它能触达的系统。三种连接方式（API/CLI/MCP
 
 ## 相关概念
 - [[构建高效AI Agent]] — Agent 架构中工具设计的重要性
-- [[Skills与Agent产品对比]] — Skills 作为 MCP 的互补层
+- Skills 与 Agent 产品对比 — Skills 作为 MCP 的互补层
 - [[Agent协作核心原则-约束先行]] — 工具设计也需要约束先行

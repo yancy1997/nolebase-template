@@ -34,6 +34,10 @@ export default defineConfig(async () => {
         excludes: [
           'toc.md',
           'index.md',
+          'articles.md',
+          'topics.md',
+          'about.md',
+          '笔记/index.md',
         ],
       }),
       PageProperties(),
@@ -41,6 +45,10 @@ export default defineConfig(async () => {
         excludes: [
           'toc.md',
           'index.md',
+          'articles.md',
+          'topics.md',
+          'about.md',
+          '笔记/index.md',
         ],
       }),
       ThumbnailHashImages(),

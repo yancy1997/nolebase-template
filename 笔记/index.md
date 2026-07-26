@@ -1,13 +1,10 @@
-# 📒 笔记
+---
+layout: page
+title: 所有文章
+description: 浏览关于数据产品、Agent 工程、AI 工作流和知识管理的全部文章。
+sidebar: false
+aside: false
+comment: false
+---
 
-知识沉淀与学习记录。
-
-## 目录
-
-- AI_Agent折腾 — AI Agent 本地化部署记录
-- 工具 — 工具测评与使用指南
-- 教程 — 实践教程与指南
-- 研究 — AI Agent 研究与实践
-- 行业观察 — 行业动态与分析
-- 概念 — 核心概念与理论
-- 资源 — 工具、资源推荐
+<ArticleLibrary />
